@@ -562,7 +562,7 @@ Interactive API docs: `http://localhost:8000/docs`
 #### 1. Clone the repository
 
 ```bash
-git clone https://github.com/beratfettahoglu/biowire.git
+git clone https://github.com/beratfoglu/biowire.git
 cd biowire
 ```
 
@@ -621,7 +621,7 @@ docker-compose up         # Start without rebuild
 #### 1. Clone
 
 ```bash
-git clone https://github.com/beratfettahoglu/biowire.git
+git clone https://github.com/beratfoglu/biowire.git
 cd biowire
 ```
 
