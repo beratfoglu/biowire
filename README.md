@@ -4,6 +4,8 @@
 
 A full-stack personal health platform combining a custom **5-layer Mamdani Fuzzy Logic Engine**, **Groq LLM** clinical reasoning, real-time environmental data, and a comprehensive health management dashboard — built to help users navigate the healthcare system with confidence.
 
+> ⚕️ **Medical Disclaimer**: Biowire is an educational and informational tool. It does **not** provide medical diagnoses and is **not** a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for medical decisions.
+
 ---
 
 ## Screenshots
@@ -497,6 +499,8 @@ biowire/
 
 A trigger on `auth.users` automatically creates a `profiles` row on registration using data from `user_metadata`.
 
+> **Note**: Modules such as Health Library bookmarks, mood logs, cycle tracking, and medical records interact with Supabase directly from the frontend client — they do not pass through the FastAPI backend.
+
 ---
 
 ## API Endpoints
@@ -680,7 +684,7 @@ Open `http://localhost:3000`
 ## Security
 
 - **Row Level Security**: all Supabase tables enforce per-user isolation — no cross-user data access is possible at the database level
-- **JWT authentication**: all backend endpoints require a valid JWT; `demo-token` bypass exists only for local development
+- **JWT authentication**: all backend endpoints require a valid JWT
 - **Private storage**: medical documents are stored in a private Supabase bucket — no public URLs
 - **Environment variables**: no API keys or secrets are hardcoded; all loaded from `.env` files excluded from version control
 - **No server-side session persistence**: BioChat sessions are in-memory only — messages are not stored in the database
@@ -691,7 +695,6 @@ Open `http://localhost:3000`
 
 - BioChat sessions are stored in-memory — restarting the backend clears all conversation history
 - NewsAPI free tier is limited to 100 requests/day; feed falls back to WHO + CDC + PubMed if key is absent
-- `demo-token` bypass in BioChat router is for local development only — must be removed before production deployment
 - Medical Imaging AI module (DenseNet-121 + EfficientNet-B0) is planned but not yet implemented
 
 ---
